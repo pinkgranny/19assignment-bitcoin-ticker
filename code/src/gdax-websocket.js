@@ -1,7 +1,7 @@
 export default (subscriptionId, onDataReceivedCallback) => {
   const gdaxSocket = new WebSocket("wss://ws-feed.gdax.com")
 
-  gdaxSocket.onopen = () => {
+  gdaxSocket.onopen = () => { // connect to websocket with this .onopen
     console.log("WebSocket opened")
     const message = JSON.stringify({
       type: "subscribe",
@@ -11,7 +11,7 @@ export default (subscriptionId, onDataReceivedCallback) => {
     gdaxSocket.send(message)
   }
 
-  gdaxSocket.onmessage = event => {
+  gdaxSocket.onmessage = event => { //.onmessage is used to handle the messages theat we receive from the websocket
     const message = JSON.parse(event.data)
 
     if (message.type === "ticker") {
