@@ -5,10 +5,10 @@ export default class Dollars extends React.Component {
     return (
       <div className="dollar-item-holder">
         <h3>{this.props.name}</h3>
-        {this.props.max}
-        {this.props.maxlabel}
-        {this.props.min}
-        {this.props.minlabel}
+        <li>{this.props.max}</li>
+        <li>{this.props.maxlabel}</li>
+        <li>{this.props.min}</li>
+        <li>{this.props.minlabel}</li>
       </div>
     )
   }
