@@ -21,14 +21,13 @@ class App extends React.Component {
 
   handleNewTickerMessage = newTickerMessage => {
     newTickerMessage.price = parseFloat(newTickerMessage.price, 10)
-    //number needed as normally numbers are based on 10 and here on 16?
+    // number needed as normally numbers are based on 10 and here on 16?
     this.setState(previousState => ({
       tickerMessages: previousState.tickerMessages.concat([newTickerMessage])
     }))
   }
 
   render() {
-
     return (
       <LineChart width={600} height={400} data={this.state.tickerMessages}>
 
