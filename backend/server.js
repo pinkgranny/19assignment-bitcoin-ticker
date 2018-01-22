@@ -29,10 +29,17 @@ const AiInvestmentTech = mongoose.model("AiInvestmentTech", {
   percentagelabel: String
 })
 
-
-app.get("/", (req, res) => {
-  res.send("AI investment percentages API")
+app.get("/ai-investment-percentages", (req, res) => {
+  AiInvestmentTech.find().then(allAiInvestmentP => {
+    res.json(allAiInvestmentP)
+  })
 })
+
+// app.get("/", (req, res) => {
+//   AiInvestmentTech.find().then(allAi => {
+//     res.json(allAi)
+//   })
+// })
 
 // Endpoint to create a AiInvestmentTech object. Send a POST to /ai-investment-percentages with a JSON body
 // with the keys and values you want to persist in the database.
@@ -52,8 +59,10 @@ const BusinessAdoption = mongoose.model("BusinessAdoption", {
 })
 
 
-app.get("/", (req, res) => {
-  res.send("AI Business adoption percentages API")
+app.get("/business-adoption-percentages", (req, res) => {
+  BusinessAdoption.find().then(allBusinessAdoptions => {
+    res.json(allBusinessAdoptions)
+  })
 })
 
 // Endpoint to create the BusinessAdoption object. Send a POST to /business-adoption-percentages with a JSON body
@@ -75,9 +84,10 @@ const InvestedDollars = mongoose.model("InvestedDollars", {
   minlabel: String
 })
 
-
-app.get("/", (req, res) => {
-  res.send("AI investment dollar amounts per continent API")
+app.get("/invested-dollars", (req, res) => {
+  InvestedDollars.find().then(allInvestedDollars => {
+    res.json(allInvestedDollars)
+  })
 })
 
 // Endpoint to create the InvestedDollars object. Send a POST to /invested-dollars with a JSON body

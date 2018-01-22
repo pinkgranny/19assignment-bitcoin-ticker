@@ -1,63 +1,48 @@
 import React from "react"
-import { LineChart, Line, Tooltip, YAxis, XAxis } from "recharts"
-import openGdaxWebsocket from "../gdax-websocket"
+import BitCoin from "./bitcoin"
+import Dollars from "./dollars"
 
-class App extends React.Component {
+export default class App extends React.Component {
 
   constructor(props) {
     super(props)
     this.state = {
-      tickerMessages: []
+      // aiInvestmentTechs: [],
+      // businessAdoptions: [],
+      investedDollars: []
     }
   }
 
   componentDidMount() {
-    this.websocket = openGdaxWebsocket("BTC-EUR", this.handleNewTickerMessage)
-  }
-
-  componentWillUnmount() {
-    this.websocket.close()
-  }
-
-  handleNewTickerMessage = newTickerMessage => {
-    newTickerMessage.price = parseFloat(newTickerMessage.price, 10)
-    // number needed as normally numbers are based on 10 and here on 16?
-    this.setState(previousState => ({
-      tickerMessages: previousState.tickerMessages.concat([newTickerMessage])
-    }))
+    fetch("http://localhost:8080/invested-dollars").then(response => {
+      // console.log(response.json())
+      return response.json()
+    }).then(json => {
+      this.setState({
+        dollars: json
+      })
+    })
   }
 
   render() {
     return (
-      <LineChart width={600} height={400} data={this.state.tickerMessages}>
+      <div>
+        <h1>Data visualisation</h1>
+        <div className="dollar-container">
+          {this.state.investedDollars.map(item => {
+            return <Dollars
+              name={item.name}
+              max={item.max}
+              maxlabel={item.maxlabel}
+              min={item.min}
+              minlabel={item.minlabel} />
+          })}
 
-        <Line
-          type="monotone"
-          dataKey="price"
-          stroke="#8884d8"
-          strokeWidth={2}
-          dot={false} />
-        <YAxis
-          type="number"
-          domain={["dataMin", "dataMax"]} />
-        <XAxis />
-        <Tooltip />
-      </LineChart>
+        </div>
+        <BitCoin />
+
+      </div>
     )
   }
-  // render() {
-  //   return (
-  //     <div>
-  //       {this.state.tickerMessages.map(msg => (
-  //         // sequence is the id the GdaxWebsocket gives us
-  //         <div key={msg.sequence}>
-  //           {msg.time}: <strong>{msg.price} EUR</strong>
-  //         </div>
-  //       ))}
-  //     </div>
-  //   )
-  // }
 
 }
-
-export default App
