@@ -3,6 +3,7 @@ import BitCoin from "./bitcoin"
 import Dollars from "./aidollars"
 import AiTechs from "./aitechs"
 import AiAdoption from "./aiadoption"
+import Pie from "./piechart"
 
 export default class App extends React.Component {
 
@@ -42,10 +43,28 @@ export default class App extends React.Component {
     })
   }
 
+  // const AiTechs = ({x, y, innerRadius, outerRadius, data}) => {
+  //   let pie = d3.layout.pie()
+  //               .value((d) => d.value)(data),
+  //       translate = `translate(${x}, ${y})`,
+  //       colors = d3.scale.category10();
+
   render() {
     return (
       <div>
         <h1>Data visualisation</h1>
+        <Pie
+          x={100}
+          y={100}
+          outerRadius={100}
+          innerRadius={50}
+          data={[
+            { value: 92 - 34, label: "Code lines" },
+            {
+              value: 34,
+              label: "Empty lines"
+            }
+          ]} />
         <div className="dollar-container">
           <h2>Dollars invested to AI in different continents (2016)</h2>
           {this.state.investedDollars.map(item => {
@@ -82,3 +101,9 @@ export default class App extends React.Component {
   }
 
 }
+
+// const AiTechs = ({x, y, innerRadius, outerRadius, data}) => {
+//   let pie = d3.layout.pie()
+//               .value((d) => d.value)(data),
+//       translate = `translate(${x}, ${y})`,
+//       colors = d3.scale.category10();
