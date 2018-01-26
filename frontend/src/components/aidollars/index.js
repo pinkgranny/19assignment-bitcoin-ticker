@@ -1,33 +1,33 @@
 import React from "react"
-import BarChart from "react-d3-components"
+import { ReactD3, BarChart } from "react-d3-components"
 
 export default class Dollars extends React.Component {
 
   constructor(props) {
     super(props)
     this.state = {
-      label: this.props.name,
-      values: {
-        x: this.props.maxlabel,
-        y: this.props.max
+      data: [{
+        label: "somethingA",
+        values: [{x: "SomethingA", y: 10}, {x: "SomethingB", y: 4}, {x: "SomethingC", y: 3}]
+      }]
       }
     }
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps !== this.props) {
-      this.setState({
-        label: this.props.name,
-        values: {
-          x: this.props.maxlabel,
-          y: this.props.max
-        }
-     })
-    }
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   if (nextProps !== this.props) {
+  //     this.setState({
+  //       label: "somethingA",
+  //       values: {
+  //         x: "SomethingA"
+  //         y: 10
+  //       }
+  //    })
+  //   }
+  // }
 
-// BarChart= ReactD3.BarChart
-//   let bcdata = [{
+BarChart= ReactD3.BarChart
+//   let data = [{
 //     label: "somethingA",
 //     values: [{x: "SomethingA", y: 10}, {x: "SomethingB", y: 4}, {x: "SomethingC", y: 3}]
 // }]
@@ -37,9 +37,7 @@ render() {
     <div className="dollar-item-holder">
       <h3>{this.props.name}</h3>
       <BarChart
-        label={this.props.name}
-        x={this.props.maxlabel}
-        y={this.props.max}
+        data={data}
         width={400}
         height={400}
         margin={{

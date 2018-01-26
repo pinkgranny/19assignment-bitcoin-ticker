@@ -77,8 +77,8 @@ export default class App extends React.Component {
               percentagelabel={item.percentagelabel} />
           })}
         </div>
-        <BitCoin />
-        <Ethereum />
+        {/* <BitCoin />
+        <Ethereum /> */}
 
       </div>
     )
