@@ -13,14 +13,14 @@ export default class AiAdoption extends React.Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps !== this.props) {
-      this.setState({ value: nextProps.percentage })
-    }
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   if (nextProps !== this.props) {
+  //     this.setState({ value: nextProps.percentage })
+  //   }
+  // }
 
-  startColor = '#6495ed'; // cornflowerblue
-  endColor = '#dc143c'; // crimson
+  startColor = "#6495ed"; // cornflowerblue
+  endColor = "#dc143c"; // crimson
 
   // <div className="ai-adoption-item-holder">
   //   <h3>{this.props.name}</h3>
