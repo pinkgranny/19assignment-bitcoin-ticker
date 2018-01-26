@@ -3,13 +3,12 @@
   "version": "1.2.2",
   "private": true,
   "dependencies": {
-    "d3": "^4.12.2",
     "eslint-config-technigo": "^1.5.0",
     "react": "^16.2.0",
+    "react-d3-components": "^0.8.0",
     "react-dom": "^16.2.0",
     "react-liquid-gauge": "^1.2.4",
     "react-scripts": "1.0.16",
-    "react-svg-piechart": "^2.0.3",
     "recharts": "^1.0.0-beta.7"
   },
   "scripts": {

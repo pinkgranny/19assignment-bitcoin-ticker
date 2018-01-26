@@ -46,7 +46,8 @@ export default class BitCoin extends React.Component {
           <Tooltip />
         </LineChart>
         <p>Note! You can get the exact Euro price by using the
-          tooltip when you hover on top of the graph.
+           tooltip when you hover on top of the graph.
+           The X-axis shows the number of bids since you opened your browser.
         </p>
       </div>
     )

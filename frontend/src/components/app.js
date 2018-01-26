@@ -1,9 +1,10 @@
 import React from "react"
 import BitCoin from "./bitcoin"
-import Dollars from "./aidollars"
+import Ethereum from "./ethereum"
+// import Dollars from "./aidollars"
 import AiTechs from "./aitechs"
 import AiAdoption from "./aiadoption"
-import Pie from "./piechart"
+// import Pie from "./piechart"
 
 export default class App extends React.Component {
 
@@ -49,14 +50,14 @@ export default class App extends React.Component {
         <h1>Data visualisation</h1>
         <div className="dollar-container">
           <h2>Dollars invested to AI in different continents (2016)</h2>
-          {this.state.investedDollars.map(item => {
+          {/* {this.state.investedDollars.map(item => {
             return <Dollars
               name={item.name}
               max={item.max}
               maxlabel={item.maxlabel}
               min={item.min}
               minlabel={item.minlabel} />
-          })}
+          })} */}
         </div>
         <div className="ai-tech-container">
           <h2>AI technologies invested in (2016)</h2>
@@ -76,7 +77,8 @@ export default class App extends React.Component {
               percentagelabel={item.percentagelabel} />
           })}
         </div>
-        {/* <BitCoin /> */}
+        <BitCoin />
+        <Ethereum />
 
       </div>
     )
