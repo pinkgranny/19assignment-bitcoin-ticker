@@ -5,7 +5,7 @@ export default class AiTechs extends React.Component {
 
   data = {
     label: "Ai technologies",
-    values: [{ x: "Machine learning 56%", y: 56 }, { x: "Natural language 7%", y: 7 }, { x: "Autonomous vehicles 6%", y: 6 }, { x: "Computer vision 28%", y: 28 }, { x: "Virtual assistants 3%", y: 3 }]
+    values: [{ x: "Machine learning 56%", y: 56 }, { x: "Computer vision 28%", y: 28 }, { x: "Virtual assistants 3%", y: 3 }, { x: "Natural language 7%", y: 7 }, { x: "Autonomous vehicles 6%", y: 6 }]
   }
 
   sort = null
@@ -15,7 +15,7 @@ export default class AiTechs extends React.Component {
       <div className="ai-tech-item-holder">
         <PieChart
           data={this.data}
-          width={700}
+          width={750}
           height={400}
           margin={{
             top: 10,

@@ -13,14 +13,14 @@ export default class AiAdoption extends React.Component {
     }
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   if (nextProps !== this.props) {
-  //     this.setState({ value: nextProps.percentage })
-  //   }
-  // }
+  componentWillReceiveProps(nextProps) {
+    if (nextProps !== this.props) {
+      this.setState({ value: nextProps.percentage })
+    }
+  }
 
-  startColor = "#6495ed"; // cornflowerblue
-  endColor = "#dc143c"; // crimson
+  startColor = "#2976b4"; // cornflowerblue
+  endColor = "#dc14b1" // crimson
 
   // <div className="ai-adoption-item-holder">
   //   <h3>{this.props.name}</h3>
@@ -91,8 +91,8 @@ export default class AiAdoption extends React.Component {
           }}
           riseAnimation
           waveAnimation
-          waveFrequency={2}
-          waveAmplitude={5}
+          waveFrequency={1}
+          waveAmplitude={3}
           gradient
           gradientStops={gradientStops}
           circleStyle={{
@@ -102,7 +102,7 @@ export default class AiAdoption extends React.Component {
             fill: fillColor
           }}
           textStyle={{
-            fill: color("#b53bb6").toString(),
+            fill: color("#2976b4").toString(),
             fontFamily: "Dosis"
           }}
           waveTextStyle={{

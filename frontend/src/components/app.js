@@ -4,6 +4,7 @@ import Ethereum from "./ethereum"
 import Dollars from "./aidollars"
 import AiTechs from "./aitechs"
 import AiAdoption from "./aiadoption"
+// import williamBout from "images/williamBout.jpg"
 // import Pie from "./piechart"
 
 export default class App extends React.Component {
@@ -46,8 +47,20 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Data visualisation</h1>
+      <div className="background">
+        <h2>Data visualisation of</h2>
+        <h1>AI & Cryptocurrencies</h1>
+        {/* <img src="/images/william-bout-264826.jpg" alt="" /> */}
+        <div className="ai-tech-container">
+          <h2>AI technologies invested in (2016)</h2>
+          <AiTechs />
+          {/* {this.state.aiInvestmentTechs.map(item => {
+            return <AiTechs
+              name={item.name}
+              percentage={item.percentage}
+              percentagelabel={item.percentagelabel} />
+          })} */}
+        </div>
         <div className="dollar-container">
           <h2>Dollars invested to AI in different continents</h2>
           <Dollars />
@@ -61,16 +74,7 @@ export default class App extends React.Component {
           })} */}
           <p>Investment range in billion dollars in 2016. (Source: McKinsey Global Institute)</p>
         </div>
-        <div className="ai-tech-container">
-          <h2>AI technologies invested in (2016)</h2>
-          <AiTechs />
-          {/* {this.state.aiInvestmentTechs.map(item => {
-            return <AiTechs
-              name={item.name}
-              percentage={item.percentage}
-              percentagelabel={item.percentagelabel} />
-          })} */}
-        </div>
+
         <div className="ai-adoption-container">
           <h2>AI adoption levels in business (2016)</h2>
           {this.state.businessAdoptions.map(item => {
