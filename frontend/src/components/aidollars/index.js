@@ -18,35 +18,31 @@ export default class Dollars extends React.Component {
   // }
 
   data =[{
-        label: 'Max',
-        values: [{x: 'North America', y: 23}, {x: 'Asia', y: 12}, {x: 'Europe', y: 4}]
-        },
-        {
-        label: 'Min',
-        values: [{x: 'North America', y: 15}, {x: 'Asia', y: 8}, {x: 'Europe', y: 3}]
-        }]
+    label: "Max",
+    values: [{ x: "North America", y: 23 }, { x: "Asia", y: 12 }, { x: "Europe", y: 4 }]
+  },
+  {
+    label: "Min",
+    values: [{ x: "North America", y: 15 }, { x: "Asia", y: 8 }, { x: "Europe", y: 3 }]
+  }]
 
   // data= [{
   //   label: "SomethingA",
   //   values: [{ x: "SomethingA", y: 10 }, { x: "SomethingB", y: 4 }, { x: "SomethingC", y: 3 }]
   // }]
 
-
   // data= [{
   //     label: {this.props.name},
   //     values: [{ x: {this.props.name}, y: 'max' }, { x: 'name', y: 'max' }]
   //   }]
 
-
-
 render() {
     return (
       <div className="dollar-item-holder">
         {/* <h3>{this.props.name}</h3> */}
-        <h3></h3>
         <BarChart
-          groupedBars
-          data= {this.data}
+          // groupedBars
+          data={this.data}
           // data={this.data}
           width={400}
           height={400}

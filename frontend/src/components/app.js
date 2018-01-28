@@ -49,7 +49,7 @@ export default class App extends React.Component {
       <div>
         <h1>Data visualisation</h1>
         <div className="dollar-container">
-          <h2>Dollars invested to AI in different continents (2016)</h2>
+          <h2>Dollars invested to AI in different continents</h2>
           <Dollars />
           {/* {this.state.investedDollars.map(item => {
             return <Dollars
@@ -59,16 +59,17 @@ export default class App extends React.Component {
               min={item.min}
               minlabel={item.minlabel} />
           })} */}
-          <p>Investments in billion dollars</p>
+          <p>Investment range in billion dollars in 2016. (Source: McKinsey Global Institute)</p>
         </div>
         <div className="ai-tech-container">
           <h2>AI technologies invested in (2016)</h2>
-          {this.state.aiInvestmentTechs.map(item => {
+          <AiTechs />
+          {/* {this.state.aiInvestmentTechs.map(item => {
             return <AiTechs
               name={item.name}
               percentage={item.percentage}
               percentagelabel={item.percentagelabel} />
-          })}
+          })} */}
         </div>
         <div className="ai-adoption-container">
           <h2>AI adoption levels in business (2016)</h2>
