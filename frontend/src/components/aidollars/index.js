@@ -59,8 +59,12 @@ export default class Dollars extends React.Component {
   }
 }
 
-// BarChart= ReactD3.BarChart
-//   let data = [{
-//     label: "somethingA",
-//     values: [{x: "SomethingA", y: 10}, {x: "SomethingB", y: 4}, {x: "SomethingC", y: 3}]
-// }]
+// original data with fixed values
+// -  data =[{
+//  -    label: "Max",
+//  -    values: [{ x: "North America", y: 23 }, { x: "Asia", y: 12 }, { x: "Europe", y: 4 }]
+//  -  },
+//  -  {
+//  -    label: "Min",
+//  -    values: [{ x: "North America", y: 15 }, { x: "Asia", y: 8 }, { x: "Europe", y: 3 }]
+//  -  }]
