@@ -1,8 +1,8 @@
 body {
   margin: 0;
+  margin-top: 5%;
   padding: 0;
   font-family: sans-serif;
-
   background-color: #80808038;
 }
 
@@ -11,7 +11,8 @@ h1, h2, h3 {
   color: #1a4f79;
 }
 
-.ai-tech-container {
+.ai-tech-container,
+.cryptos {
   text-align: center;
   padding: 5%;
 }
@@ -21,10 +22,51 @@ h1, h2, h3 {
   padding: 5%;
 }
 
+.dollar-container h2, p,
+.cryptos h2 {
+  width: 100%;
+  text-align: center;
+}
+
+.dollar-wrapper {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: center;
+  padding-top: 3%;
+}
+
+.dollar-wrapper p, .Dollars {
+  width: 35%;
+  text-align: right;
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
 .ai-adoption-container {
   padding: 5% 0;
 }
-/* .background {
-  background: url(images/williamBout.jpg) no-repeat center center ;
-  background-size: cover;
-} */
+
+.liquid-gauge {
+  padding-top: 3%;
+}
+
+.cryptos {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+}
+
+.link-box {
+  width: 40%;
+  height: 200px;
+  background-color: #2976b4;
+  margin: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.link-box h3 {
+  color: white;
+}

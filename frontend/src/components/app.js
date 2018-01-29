@@ -63,7 +63,22 @@ export default class App extends React.Component {
         </div>
         <div className="dollar-container">
           <h2>Dollars invested to AI in different continents</h2>
-          <Dollars />
+          <div className="dollar-wrapper">
+            <p>In 2016, AI investment in North America ranged from $15 billion to $23 billion,
+               Asia (mainly China) was $8 billion to $12 billion, and Europe lagged at $3 billion to
+               $4 billion. <br /><br />
+               Machine learning took 56% of the investments with computer vision second at 28%.
+               Natural language garnered 7%, autonomous vehicles was at 6%
+               and virtual assistants made up the rest. But despite the level of investment,
+               actual business adoption of AI remains limited, even among firms that know its
+               capabilities. Around 40% of firms are thinking about it, 40% experiment with it
+               and only 20% actually adopt AI in a few areas. <br /><br />
+              <a href="http://amp.weforum.org/agenda/2017/11/artificial-intelligence-is-going-to-completely-change-your-life">
+                   Source: Artificial intelligence is going to completely change your life
+              </a>
+            </p>
+            <Dollars />
+          </div>
           {/* {this.state.investedDollars.map(item => {
             return <Dollars
               name={item.name}
@@ -76,13 +91,22 @@ export default class App extends React.Component {
         </div>
 
         <div className="ai-adoption-container">
-          <h2>AI adoption levels in business (2016)</h2>
+          <h2>AI adoption levels in business (2016)</h2><br /><br />
           {this.state.businessAdoptions.map(item => {
             return <AiAdoption
               name={item.name}
               percentage={item.percentage}
               percentagelabel={item.percentagelabel} />
           })}
+        </div>
+        <div className="cryptos">
+          <h2>Cryptocurrencies</h2>
+          <div className="link-box">
+            <h3>See Bitcoin real time price ticker</h3>
+          </div>
+          <div className="link-box">
+            <h3>See Ethereum real time price ticker</h3>
+          </div>
         </div>
         {/* <BitCoin />
         <Ethereum /> */}

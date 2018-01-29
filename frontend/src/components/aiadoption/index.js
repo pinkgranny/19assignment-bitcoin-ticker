@@ -61,7 +61,6 @@ export default class AiAdoption extends React.Component {
 
     return (
       <div className="liquid-gauge">
-        <h3>{this.props.name}</h3>
         <LiquidFillGauge
           style={{ margin: "0 auto" }}
           width={radius * 2}
@@ -109,6 +108,7 @@ export default class AiAdoption extends React.Component {
             fill: color("#fff").toString(),
             fontFamily: "Dosis"
           }} />
+          <h3>{this.props.name}</h3>
       </div>
     )
   }
