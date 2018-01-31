@@ -11,10 +11,13 @@ h1, h2, h3 {
   color: #1a4f79;
 }
 
-.ai-tech-container,
-.cryptos {
+h2 {
+  width: 100%;
+}
+
+.ai-tech-container {
   text-align: center;
-  padding: 5%;
+  padding: 3%;
 }
 
 .dollar-container {
@@ -54,13 +57,15 @@ h1, h2, h3 {
   display: flex;
   flex-wrap: wrap;
   background-color: white;
+  padding: 5% 5% 0 5%;
+  background: white;
 }
 
 .link-box {
   width: 40%;
   height: 200px;
   background-color: #2976b4;
-  margin: 5%;
+  margin: 5% 5% 0 5%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -70,4 +75,30 @@ h1, h2, h3 {
 .link-box h3 {
   color: white;
   padding: 10%;
+}
+
+.graph-container,
+.recharts-wrapper {
+  background-color: white;
+  padding: 5% 5% 0 5%;
+}
+.graph-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+.graph-wrap p {
+  width: 400px;
+  padding-top: 5.5%;
+}
+
+svg.recharts-surface {
+  background-color: #80808005;
+}
+
+.footer {
+  background-color: white;
+  height: 200px;
 }

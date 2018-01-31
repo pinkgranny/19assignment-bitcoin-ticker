@@ -29,14 +29,14 @@ export default class BitCoin extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="graph-wrap">
         <h2>Bitcoin real time price ticker in Euros</h2>
         <LineChart width={600} height={400} data={this.state.tickerMessages}>
 
           <Line
             type="monotone"
             dataKey="price"
-            stroke="#8884d8"
+            stroke="#1a4f79"
             strokeWidth={2}
             dot={false} />
           <YAxis

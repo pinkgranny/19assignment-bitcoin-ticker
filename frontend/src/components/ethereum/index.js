@@ -28,13 +28,13 @@ export default class Ethereum extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="graph-wrap">
         <h2>Ethereum real time price ticker in Euros</h2>
         <LineChart width={600} height={400} data={this.state.tickerMessages}>
           <Line
             type="monotone"
             dataKey="price"
-            stroke="#8884d8"
+            stroke="#1a4f79"
             strokeWidth={2}
             dot={false} />
           <YAxis
@@ -46,6 +46,8 @@ export default class Ethereum extends React.Component {
         <p>Note! You can get the exact Euro price by using the
            tooltip when you hover on top of the graph.
            The X-axis shows the number of bids since you opened your browser.
+           If the graph is empty, it means that Ethereum is not being traded
+           right now, thus no price is shown.
         </p>
       </div>
     )

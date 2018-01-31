@@ -1,11 +1,11 @@
 import React from "react"
+import { HashRouter, Route } from "react-router-dom"
 import BitCoin from "./bitcoin"
 import Ethereum from "./ethereum"
 import Dollars from "./aidollars"
 import AiTechs from "./aitechs"
 import AiAdoption from "./aiadoption"
-// import williamBout from "images/williamBout.jpg"
-// import Pie from "./piechart"
+
 
 export default class App extends React.Component {
 
@@ -47,75 +47,90 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div className="background">
-        <h2>Data visualisation of</h2>
-        <h1>AI & Cryptocurrencies</h1>
-        {/* <img src="/images/william-bout-264826.jpg" alt="" /> */}
-        <div className="ai-tech-container">
-          <h2>AI technologies invested in (2016)</h2>
-          <AiTechs />
-          {/* {this.state.aiInvestmentTechs.map(item => {
-            return <AiTechs
-              name={item.name}
-              percentage={item.percentage}
-              percentagelabel={item.percentagelabel} />
-          })} */}
-        </div>
-        <div className="dollar-container">
-          <h2>Dollars invested to AI in different continents</h2>
-          <div className="dollar-wrapper">
-            <p>In 2016, AI investment in North America ranged from $15 billion to $23 billion,
-               Asia (mainly China) was $8 billion to $12 billion, and Europe lagged at $3 billion to
-               $4 billion. <br /><br />
-               Machine learning took 56% of the investments with computer vision second at 28%.
-               Natural language garnered 7%, autonomous vehicles was at 6%
-               and virtual assistants made up the rest. But despite the level of investment,
-               actual business adoption of AI remains limited, even among firms that know its
-               capabilities. Around 40% of firms are thinking about it, 40% experiment with it
-               and only 20% actually adopt AI in a few areas. <br /><br />
-              <a href="http://amp.weforum.org/agenda/2017/11/artificial-intelligence-is-going-to-completely-change-your-life">
-                   Source: Artificial intelligence is going to completely change your life
-              </a>
-            </p>
-            <Dollars />
-          </div>
-          {/* {this.state.investedDollars.map(item => {
-            return <Dollars
-              name={item.name}
-              max={item.max}
-              maxlabel={item.maxlabel}
-              min={item.min}
-              minlabel={item.minlabel} />
-          })} */}
-          <p>Investment range in billion dollars in 2016. (Source: McKinsey Global Institute)</p>
-        </div>
+      <HashRouter>
 
-        <div className="ai-adoption-container">
-          <h2>AI adoption levels in business (2016)</h2><br /><br />
-          {this.state.businessAdoptions.map(item => {
-            return <AiAdoption
-              name={item.name}
-              percentage={item.percentage}
-              percentagelabel={item.percentagelabel} />
-          })}
-        </div>
-        <div className="cryptos">
-          <h2>Cryptocurrencies</h2>
-          <div className="link-box">
-            <h3>See Bitcoin real time price ticker</h3>
+        <div className="background">
+          <h2>Data visualisation of</h2>
+          <h1>AI & Cryptocurrencies</h1>
+          {/* <img src="/images/william-bout-264826.jpg" alt="" /> */}
+          <div className="ai-tech-container">
+            <h2>AI technologies invested in (2016)</h2>
+            <AiTechs />
+              {/* {this.state.aiInvestmentTechs.map(item => {
+                return <AiTechs
+                  name={item.name}
+                  percentage={item.percentage}
+                  percentagelabel={item.percentagelabel} />
+              })} */}
           </div>
-          <div className="link-box">
-            <h3>See Ethereum real time price ticker</h3>
+          <div className="dollar-container">
+            <h2>Dollars invested to AI in different continents</h2>
+            <div className="dollar-wrapper">
+              <p>In 2016, AI investment in North America ranged from $15 billion to $23 billion,
+                 Asia (mainly China) was $8 billion to $12 billion, and Europe lagged at $3 billion to
+                   $4 billion. <br /><br />
+                   Machine learning took 56% of the investments with computer vision second at 28%.
+                   Natural language garnered 7%, autonomous vehicles was at 6%
+                   and virtual assistants made up the rest. But despite the level of investment,
+                   actual business adoption of AI remains limited, even among firms that know its
+                   capabilities. Around 40% of firms are thinking about it, 40% experiment with it
+                   and only 20% actually adopt AI in a few areas. <br /><br />
+                <a href="http://amp.weforum.org/agenda/2017/11/artificial-intelligence-is-going-to-completely-change-your-life">
+                       Source: Artificial intelligence is going to completely change your life
+                </a>
+              </p>
+              <Dollars />
+            </div>
+              {/* {this.state.investedDollars.map(item => {
+                return <Dollars
+                  name={item.name}
+                  max={item.max}
+                  maxlabel={item.maxlabel}
+                  min={item.min}
+                  minlabel={item.minlabel} />
+              })} */}
+            <p>Investment range in billion dollars in 2016. (Source: McKinsey Global Institute)</p>
           </div>
-        </div>
-        {/* <BitCoin />
-        <Ethereum /> */}
 
-      </div>
+          <div className="ai-adoption-container">
+            <h2>AI adoption levels in business (2016)</h2><br /><br />
+            {this.state.businessAdoptions.map(item => {
+              return <AiAdoption
+                name={item.name}
+                percentage={item.percentage}
+                percentagelabel={item.percentagelabel} />
+            })}
+          </div>
+          <div className="cryptos">
+            <h2>Cryptocurrencies</h2>
+            <div className="link-box">
+              <h3>See Bitcoin real time price ticker</h3>
+            </div>
+            <div className="link-box">
+              <h3>See Ethereum real time price ticker</h3>
+            </div>
+          </div>
+          <div className="graph-container">
+            <Route exact path="/Bitcoin" component={BitCoin} />
+            <Route exact path="/Ethereum" component={Ethereum} />
+          </div>
+          <div className="footer" />
+        </div>
+      </HashRouter>
     )
   }
 
 }
+
+
+{/* <Route
+  exact
+  path="/Bitcoin"
+  render={BitCoin} />
+<Route
+  exact
+  path="/Ethereum"
+  render={Ethereum} /> */}
 
 {/* <Pie
   x={100}
