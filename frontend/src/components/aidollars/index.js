@@ -11,7 +11,7 @@ export default class Dollars extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:8080/invested-dollars")
+    fetch("https://assignment-bitcoin-ticker.herokuapp.com/invested-dollars")
       .then(response => response.json())
       .then(json => {
         this.setState({

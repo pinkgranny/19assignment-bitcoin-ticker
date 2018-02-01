@@ -11,7 +11,7 @@ export default class AiTechs extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:8080/ai-investment-percentages")
+    fetch("https://assignment-bitcoin-ticker.herokuapp.com/ai-investment-percentages")
       .then(response => response.json())
       .then(json => {
         this.setState({

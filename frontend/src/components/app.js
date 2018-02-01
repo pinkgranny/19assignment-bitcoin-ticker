@@ -19,7 +19,7 @@ export default class App extends React.Component {
 
   componentDidMount() {
     fetch("https://assignment-bitcoin-ticker.herokuapp.com/ai-investment-percentages").then(response => {
-    // fetch("http://localhost:8080/ai-investment-percentages").then(response => {
+    // fetch("http://localhost8080/ai-investment-percentages").then(response => {
       // console.log(response.json())
       return response.json()
     }).then(json => {
@@ -28,7 +28,7 @@ export default class App extends React.Component {
       })
     })
     fetch("https://assignment-bitcoin-ticker.herokuapp.com/invested-dollars").then(response => {
-    // fetch("http://localhost:8080/invested-dollars").then(response => {
+    // fetch("http://localhost8080/invested-dollars").then(response => {
       // console.log(response.json())
       return response.json()
     }).then(json => {
@@ -37,7 +37,7 @@ export default class App extends React.Component {
       })
     })
     fetch("https://assignment-bitcoin-ticker.herokuapp.com/business-adoption-percentages").then(response => {
-    // fetch("http://localhost:8080/business-adoption-percentages").then(response => {
+    // fetch("http://localhost8080/business-adoption-percentages").then(response => {
       // console.log(response.json())
       return response.json()
     }).then(json => {
