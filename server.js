@@ -16,7 +16,7 @@ app.use(cors())
 // Use this in development phase
 // mongoose.connect("mongodb://localhost/ai-investment-percentages-api", { useMongoClient: true })
 // Use this once you deploy the backend instead
-const mongoUrl = process.env.MONGO_URL
+const mongoUrl = process.env.MONGO_URL || "mongodb://localhost/products-api"
 mongoose.connect(mongoUrl, { useMongoClient: true })
 // mongoose.connect("mongodb://localhost/products-api", { useMongoClient: true })
 
@@ -108,7 +108,7 @@ app.post("/invested-dollars", (req, res) => {
 // Use this on development phase
 // app.listen(8080, () => console.log("AI investment APIs' listening on port 8080!"))
 // Use this once you are ready to deploy the project
-const port = process.env.PORT
+const port = process.env.PORT || 8080
 app.listen(port, () => {
   console.log(`Server running on port ${port}`)
 })
