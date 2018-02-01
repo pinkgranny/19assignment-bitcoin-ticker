@@ -11,8 +11,13 @@ app.use(bodyParser.json())
 // Tells express to add the "Access-Control-Allow-Origin" header to allow requests from anywhere.
 app.use(cors())
 
+
 // Connect to MongoDB, on the "ai-investment-percentages-api" database. If the db doesn't exist, mongo will create it.
-mongoose.connect("mongodb://localhost/ai-investment-percentages-api", { useMongoClient: true })
+// Use this in development phase
+// mongoose.connect("mongodb://localhost/ai-investment-percentages-api", { useMongoClient: true })
+// Use this once you deploy the backend instead
+const mongoUrl = process.env.MONGO_URL
+mongoose.connect(mongoUrl, { useMongoClient: true })
 // mongoose.connect("mongodb://localhost/products-api", { useMongoClient: true })
 
 // This makes mongo use ES6 promises, instead of its own implementation
@@ -100,4 +105,10 @@ app.post("/invested-dollars", (req, res) => {
     .catch(err => { res.status(400).send(err) })
 })
 
-app.listen(8080, () => console.log("AI investment APIs' listening on port 8080!"))
+// Use this on development phase
+// app.listen(8080, () => console.log("AI investment APIs' listening on port 8080!"))
+// Use this once you are ready to deploy the project
+const port = process.env.PORT
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`)
+})
