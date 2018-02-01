@@ -2,7 +2,7 @@ import React from "react"
 import { color } from "d3-color"
 import { interpolateRgb } from "d3-interpolate"
 import LiquidFillGauge from "react-liquid-gauge"
-import style from "./style.css"
+// import style from "./style.css"
 
 export default class AiAdoption extends React.Component {
 
