@@ -108,7 +108,7 @@ export default class AiAdoption extends React.Component {
             fill: color("#fff").toString(),
             fontFamily: "Dosis"
           }} />
-          <h3>{this.props.name}</h3>
+        <h3>{this.props.name} </h3>
       </div>
     )
   }

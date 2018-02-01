@@ -1,5 +1,5 @@
 import React from "react"
-import { HashRouter, Route } from "react-router-dom"
+import { HashRouter, Route, Link } from "react-router-dom"
 import BitCoin from "./bitcoin"
 import Ethereum from "./ethereum"
 import Dollars from "./aidollars"
@@ -103,18 +103,18 @@ export default class App extends React.Component {
           </div>
           <div className="cryptos">
             <h2>Cryptocurrencies</h2>
-            <div className="link-box">
+            <Link className="link link-box" to="/Bitcoin">
               <h3>See Bitcoin real time price ticker</h3>
-            </div>
-            <div className="link-box">
+            </Link>
+            <Link className="link link-box" to="/Ethereum">
               <h3>See Ethereum real time price ticker</h3>
-            </div>
+            </Link>
           </div>
           <div className="graph-container">
             <Route exact path="/Bitcoin" component={BitCoin} />
             <Route exact path="/Ethereum" component={Ethereum} />
+            <div className="footer" />
           </div>
-          <div className="footer" />
         </div>
       </HashRouter>
     )

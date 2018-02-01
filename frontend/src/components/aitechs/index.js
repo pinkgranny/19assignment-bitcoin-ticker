@@ -37,7 +37,7 @@ export default class AiTechs extends React.Component {
           <PieChart
             data={this.preparePieData()}
             // data={this.data}
-            width={750}
+            width={740}
             height={400}
             margin={{
               top: 10,

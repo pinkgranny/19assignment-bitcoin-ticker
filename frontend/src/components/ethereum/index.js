@@ -1,4 +1,5 @@
 import React from "react"
+import { HashRouter, Route, Link } from "react-router-dom"
 import { LineChart, Line, Tooltip, YAxis, XAxis } from "recharts"
 import openGdaxWebsocket from "./../../gdax-websocket"
 
@@ -49,6 +50,11 @@ export default class Ethereum extends React.Component {
            If the graph is empty, it means that Ethereum is not being traded
            right now, thus no price is shown.
         </p>
+        <div className="hide-footer" >
+          <Link className="hide-btn" exact to="/">
+            <h3>Hide the price tickers</h3>
+          </Link>
+        </div>
       </div>
     )
   }

@@ -1,3 +1,7 @@
+*{
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   margin-top: 5%;
@@ -17,7 +21,7 @@ h2 {
 
 .ai-tech-container {
   text-align: center;
-  padding: 3%;
+  width: 100%;
 }
 
 .dollar-container {
@@ -38,13 +42,6 @@ h2 {
   padding-top: 3%;
 }
 
-.dollar-wrapper p, .Dollars {
-  width: 35%;
-  text-align: right;
-  padding-right: 5%;
-  padding-left: 5%;
-}
-
 .ai-adoption-container {
   padding: 5% 0;
 }
@@ -53,9 +50,21 @@ h2 {
   padding-top: 3%;
 }
 
+.ai-adoption-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ai-adoption-container  h2 {
+  width: 100%;
+  text-align: center;
+}
+
 .cryptos {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   background-color: white;
   padding: 5% 5% 0 5%;
   background: white;
@@ -72,26 +81,36 @@ h2 {
   justify-content: center;
 }
 
-.link-box h3 {
+.link-box h3,
+.hide-btn h3 {
   color: white;
-  padding: 10%;
+  padding: 5%;
+  width: 100%;
 }
 
 .graph-container,
 .recharts-wrapper {
   background-color: white;
-  padding: 5% 5% 0 5%;
+  padding-top: 3%;
+  width: 100%;
 }
+
+.recharts-wrapper {
+  margin: 3% 3% 0 3%;
+}
+
+
 .graph-wrap {
   display: flex;
   flex-wrap: wrap;
   /* align-items: center; */
   justify-content: center;
+  width: 100%;
+  padding-top: 2%;
 }
 
 .graph-wrap p {
-  width: 400px;
-  padding-top: 5.5%;
+  width: 350px;
 }
 
 svg.recharts-surface {
@@ -100,5 +119,147 @@ svg.recharts-surface {
 
 .footer {
   background-color: white;
-  height: 200px;
+  height: 100px;
+  width: 100%;
+}
+
+.hide-footer {
+  width: 100%;
+  margin: 5% 5%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.hide-footer h3 {
+  width: 100%;
+  padding: 3%;
+}
+
+.hide-footer .hide-btn {
+  width: 40%;
+  height: 120px;
+  background-color: #2976b4;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 799px) {
+  .background {
+    width: 799px;
+  }
+
+  .liquid-gauge h3 {
+    padding-left: 0.1%;
+  }
+
+  .ai-adoption-container,
+  .cryptos {
+    flex-direction: column;
+  }
+
+  .cryptos {
+    width: 100%;
+    padding: 5% 5%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+  }
+
+  .cryptos h2 {
+    width: 100%;
+    padding: 3%;
+  }
+
+  a.link.link-box {
+    width: 40%;
+    height: 120px;
+    background-color: #2976b4;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .link .link-box {
+    width: 400px;
+  }
+
+}
+
+@media (min-width: 800px) and (max-width: 1024px)  {
+  .link-box {
+    width: 40%;
+    height: 200px;
+  }
+
+  .dollar-wrapper p, .Dollars {
+    width: 44%;
+    text-align: right;
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+
+  .liquid-gauge {
+    width: 30%;
+    margin: 1%;
+    text-align: center;
+  }
+
+  .ai-tech-container {
+    padding: 0;
+    margin: 0;
+  }
+
+  .ai-tech-item-holder {
+    padding-bottom: 3%;
+  }
+
+  .graph-wrap p {
+    width: 600px;
+    padding-top: 3%;
+  }
+
+}
+
+@media (min-width: 1025px) and (max-width: 2000px) {
+  .link-box {
+    width: 40%;
+    height: 100px;
+  }
+
+  .dollar-wrapper p, .Dollars {
+    width: 38%;
+    text-align: center;
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+
+  .liquid-gauge {
+    width: 30%;
+    margin: 1%;
+    text-align: center;
+  }
+
+  .graph-wrap p {
+    width: 300px;
+    padding-top: 7%;
+  }
+
+  .dollar-container,
+  .cryptos,
+  .graph-container {
+    width: 100%;
+  }
+
+  .ai-tech-container {
+    padding: 3%;
+    overflow: none;
+  }
 }
